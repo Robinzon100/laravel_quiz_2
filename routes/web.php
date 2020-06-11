@@ -20,3 +20,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin/Admin', 'admin\AdminController@index')->name('home');
+Route::get('/admin/post/update/{id}', 'postController@getUpdatePost')->name('get_update');
+Route::post('/admin/post/updatePost', 'postController@updatePost')->name('update');
+
+Route::post('/admin/post/postComment', 'postController@insertComment')->name('update');
+
+Route::post('/admin/post/insert', 'postController@insertPost')->name('insert');
+Route::post('/admin/post/delete', 'postController@deletePost')->name('delete');
+
